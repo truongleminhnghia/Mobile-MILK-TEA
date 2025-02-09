@@ -1,15 +1,22 @@
 import React from 'react'
 import { Button, Text, View } from 'react-native'
-import { NavigationProp, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import type { NavigationProp, RouteProp } from '@react-navigation/native';
+import { useRoute } from "@react-navigation/native";
 
 const Detail = () => {
 
     //const navigation = useNavigation();
-    const navigationL: NavigationProp<RootStackParamList = useNavigation();
+    const navigation: NavigationProp<RootStackParamList> = useNavigation();
+    const route : RouteProp<RootStackParamList, 'detail'> = useRoute();
+
     return (
         <View>
-            <Text>Detail</Text>
-            <Button title='Go Home' onPress={() => navigation.navigate("Home")} />
+            <Text>Review detail</Text>
+            <Text>{route.params?.id}</Text>
+            <Text>{route.params?.title}</Text>
+            <Text>{route.params?.star}</Text>
+            <Button title='Go Home' onPress={() => navigation.navigate("home")} />
         </View>
     )
 }
