@@ -1,13 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
+  // đối tới ts không cần xác định type, ts nó sẽ tự động đoán type tương tự vả bên java
+  // nếu muốn ép kiểu thì sau useState<string>("")
+  const [count, setCount] = useState<number>(0);
+
   return (
     <View style={styles.container}>
+      <Text style={{ fontSize: 60, fontWeight: "600" }}>Count = {count}</Text>
       <View>
-        <Text style={styles.header}>Nghĩa TLMN</Text>
+        <Button title="InCrease" onPress={() => setCount(count + 1)} />
       </View>
-      <Text style={{ color: "red", fontSize: 60 }}>Hello world 1</Text>
-      <Text>Hello world 2</Text>
     </View>
   );
 }
@@ -19,8 +23,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  header: {
-    fontSize: 30,
-    fontWeight: 'bold',
-  }
 });
