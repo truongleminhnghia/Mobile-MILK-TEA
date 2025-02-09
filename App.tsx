@@ -1,48 +1,24 @@
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./components/review/Home";
+import Detail from "./components/review/Detail";
 
 export default function App() {
-  // đối tới ts không cần xác định type, ts nó sẽ tự động đoán type tương tự vả bên java
-  // nếu muốn ép kiểu thì sau useState<string>("")
-  const [count, setCount] = useState<number>(0);
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<number>(0);
+  const Stack = createNativeStackNavigator();
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={{ fontSize: 50, fontWeight: "600" }}>Name: {name}</Text>
-        <TextInput
-          // multiline giống như textarea
-          multiline
-          onChangeText={(value) => setName(value)}
-          style={{
-            borderColor: "green",
-            borderWidth: 1,
-            width: 200,
-            padding: 15,
-          }}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Trang chủ" }}
         />
-      </View>
-      {/* <View>
-        <Text style={{ fontSize: 50, fontWeight: "600" }}>Tuổi: {age}</Text>
-        <TextInput
-          // multiline giống như textarea
-          multiline
-          onChangeText={(value) => setAge(value)}
-          style={{
-            borderColor: "green",
-            borderWidth: 1,
-            width: 200,
-            padding: 15,
-          }}
-        />
-      </View> */}
-      <Text style={{ fontSize: 60, fontWeight: "600" }}>Count = {count}</Text>
-      <View>
-        <Button title="InCrease" onPress={() => setCount(count + 1)} />
-      </View>
-    </View>
+        <Stack.Screen name="Detail" component={Detail} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

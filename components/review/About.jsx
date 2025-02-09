@@ -1,8 +1,9 @@
 import React from 'react'
+import { Text } from 'react-native'
 
 const About = () => {
   return (
-    <div>About</div>
+    <Text>About</Text>
   )
 }
 
