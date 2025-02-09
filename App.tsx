@@ -24,7 +24,7 @@ export default function App() {
           }}
         />
       </View>
-      <View>
+      {/* <View>
         <Text style={{ fontSize: 50, fontWeight: "600" }}>Tuổi: {age}</Text>
         <TextInput
           // multiline giống như textarea
@@ -37,7 +37,7 @@ export default function App() {
             padding: 15,
           }}
         />
-      </View>
+      </View> */}
       <Text style={{ fontSize: 60, fontWeight: "600" }}>Count = {count}</Text>
       <View>
         <Button title="InCrease" onPress={() => setCount(count + 1)} />
