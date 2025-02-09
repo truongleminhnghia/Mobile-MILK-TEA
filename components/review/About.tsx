@@ -3,7 +3,7 @@ import { Text } from 'react-native'
 
 const About = () => {
   return (
-    <Text>About</Text>
+    <Text>Thông tin nhìu nhìu</Text>
   )
 }
 

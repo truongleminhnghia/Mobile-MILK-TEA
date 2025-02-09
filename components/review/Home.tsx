@@ -10,10 +10,8 @@ interface IReview {
   stars: number;
 }
 
-const Home = (props: any) => {
+const Home = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
-
-
 
   const [reviews, setReviews] = useState<IReview[]>([
     {
