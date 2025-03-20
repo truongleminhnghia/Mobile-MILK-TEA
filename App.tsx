@@ -4,11 +4,17 @@ import { StyleSheet, Text, View } from "react-native";
 import { SplashScreen } from "./src/screens";
 import AuthNavigator from "./src/navigators/AuthNavigator";
 import { NavigationContainer } from "@react-navigation/native";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import MainNavigator from "./src/navigators/MainNavigator";
 
 //App được chri định với vai trò là điều hướng
 
 export default function App() {
   const [isShowSplash, setIdShowSplash] = useState(true);
+
+  const [accessToken, setAccessToken] = useState("");
+
+  const { getItem, setItem } = useAsyncStorage("assetToken");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -16,6 +22,16 @@ export default function App() {
     }, 1500);
     return () => clearTimeout(timeout);
   });
+
+  useEffect(() => {
+    checkLogin();
+  }, []);
+
+  const checkLogin = async () => {
+    const token = await getItem();
+    console.log("token", token);
+    token && setAccessToken(token);
+  };
 
   return (
     <>
@@ -28,7 +44,7 @@ export default function App() {
         <SplashScreen />
       ) : (
         <NavigationContainer>
-          <AuthNavigator />
+          {accessToken ? <MainNavigator /> : <AuthNavigator />}
         </NavigationContainer>
       )}
     </>
