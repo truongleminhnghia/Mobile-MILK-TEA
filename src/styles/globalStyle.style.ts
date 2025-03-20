@@ -11,5 +11,15 @@ export const globalStyle = StyleSheet.create({
         fontSize: 14,
         fontFamily: fontFamilies.regular,
         color: appColor.text,
+    },
+    button: {
+        borderRadius: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: appColor.white,
+        paddingHorizontal: 16,
+        paddingVertical: 16,
+        minHeight: 56,
+        flexDirection: 'row'
     }
 })
