@@ -58,6 +58,8 @@ const ButtonComponent = (props: Props) => {
           },
         ]}
         flex={icon && iconFlex === "right" ? 1 : 0}
+        font={fontFamilies.semiBold}
+        size={16}
       />
       {icon && iconFlex === "right" && icon}
     </TouchableOpacity>
