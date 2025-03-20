@@ -4,6 +4,8 @@ import { globalStyle } from "../../styles/globalStyle.style";
 import Swiper from "react-native-swiper";
 import { appInfo } from "../../constants/appInfos.constants";
 import { appColor } from "../../constants/appColor.contant";
+import { TextComponent } from "../../components";
+import { fontFamilies } from "../../constants/fontFamilies.constant";
 
 const OnbroadingScreen = ({ navigation }: any) => {
   const [index, setIndex] = useState(0);
@@ -52,14 +54,14 @@ const OnbroadingScreen = ({ navigation }: any) => {
         ]}
       >
         <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
-          <Text style= {[styles.text, {color: appColor.gray1}]}>Skip</Text>
+        <TextComponent text="Skip" color={appColor.gray2} font={fontFamilies.medium}  />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() =>
             index < 1 ? setIndex(index + 1) : navigation.navigate("LoginScreen")
           }
         >
-          <Text style= {[styles.text]}>Next</Text>
+          <TextComponent text="Next" color={appColor.gray1}  />
         </TouchableOpacity>
       </View>
     </View>
