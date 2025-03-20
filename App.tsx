@@ -17,12 +17,21 @@ export default function App() {
     return () => clearTimeout(timeout);
   });
 
-  return isShowSplash ? (
-    <SplashScreen />
-  ) : (
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
+  return (
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      {isShowSplash ? (
+        <SplashScreen />
+      ) : (
+        <NavigationContainer>
+          <AuthNavigator />
+        </NavigationContainer>
+      )}
+    </>
   );
 }
 
