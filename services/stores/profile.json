@@ -1,0 +1,20 @@
+{
+    "id": "08dd6c33-cba2-4416-8f92-fd910d4aec5b",
+    "firstName": "Nguyễn Thịnh",
+    "email": "thinhatt2240@gmail.com",
+    "lastName": "",
+    "accountStatus": "ACTIVE",
+    "phone": "",
+    "imageUrl": "https://lh3.googleusercontent.com/a/ACg8ocIETMaS5xMgS_Yiekdq7DqxinTBWvLlLIEzyLtHomhGqFquzcE=s96-c",
+    "roleName": "ROLE_STAFF",
+    "employee": null,
+    "customer": {
+        "id": "08dd6e1c-07e8-4d1e-8a93-99c4cfcfe1d4",
+        "taxCode": "",
+        "address": "",
+        "accountLevel": "NORMAL",
+        "purchased": true
+    },
+    "createAt": "2025-03-28T17:14:41.967248",
+    "updateAt": null
+}

@@ -1,9 +1,9 @@
-
 export const appColor = {
-    WHITE: '#FFF',
-    TEXT: '#3C2F2F',
-    BG_PRIMARY: '#EF2A39',
-    GRAY1: '#6A6A6A',
-    GRAY2: '#808080',
-    GRAY3: '#F3F4F6'
+    WHITE: '#FFFFFF',
+    TEXT: '#1A1A1A',
+    BG_PRIMARY: '#FF6B00',
+    GRAY1: '#333333',
+    GRAY2: '#4F4F4F',
+    GRAY3: '#F2F2F2',
+    TEXT_GRAY: '#666666',
 }

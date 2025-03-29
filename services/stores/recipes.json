@@ -1,0 +1,1125 @@
+[
+    {
+        "id": "08dd6c10-954a-4064-83b3-e0494a0584ac",
+        "recipeTitle": "sdfsdfs",
+        "content": "{\"html\":\"<body><section class=\\\"section\\\"><h2 id=\\\"ind4\\\">Section Titsdfsdfsdfdsfle</h2><p id=\\\"ih5b\\\">Add your content here</p></section></body>\",\"css\":\"* { box-sizing: border-box; } body {margin: 0;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}*{box-sizing:border-box;}body{margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;}\"}",
+        "imageUrl": "https://hoangviettravel.vn/wp-content/uploads/2024/11/dai-dien-11.jpg",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6357-d40a-41a9-82d2-70826f4ee24f",
+            "categoryName": "Công thức trà sữa thái xanh",
+            "createAt": "2025-03-15T07:25:02.721441",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientCode": "P30106370",
+                "supplier": "Gia Uy",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "description": "1kg hạt trân châu nấu với 8kg nước\nNấu nước sôi cho hạt trân châu vào khấy đều và nấu ủ theo thời gian ở trên. Sau đó rửa sạch với nước, thêm đường hoặc mật ong là sử dụng được",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 2,
+                "quantityPerCarton": 10,
+                "unit": "KG",
+                "priceOrigin": 56000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-59bc-412b-8df1-3f3babe81a68",
+                    "categoryName": "Toppinh",
+                    "createAt": "2025-03-15T12:15:06.893787",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:35:21.694602",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638b-90a9-47e8-8863-403e8ac91b53",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/vinbar__1__33e04ccdd19c429390749d3be336dc79_1024x1024.webp?alt=media&token=0288e2f2-fd7c-49fe-ad43-36dad2ff0908",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638b-8fd0-4e29-8003-12aeca6a5731",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                        "quantity": 12,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd6c10-95df-4ce0-8be8-379bfc0b6c01",
+                "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "weightOfIngredient": 23432
+            }
+        ]
+    },
+    {
+        "id": "08dd6a00-f06b-4e06-81d7-61ff021a46e5",
+        "recipeTitle": "Trà sữa mùa đông",
+        "content": "1 ly tuyệt vời",
+        "imageUrl": "https://phache.com.vn/upload/news/pic1.png",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6357-de85-4c57-84fa-4627653ee4da",
+            "categoryName": "Công thức mùa đồng",
+            "createAt": "2025-03-15T07:25:20.309127",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6363-e6f4-423b-85f2-8fa10373854c",
+                "ingredientCode": "P41751401",
+                "supplier": "Teaespresso",
+                "ingredientName": "Trà Dâu Hoa Quả (Strawberry Fruity Tea) - Teaespresso",
+                "description": "bbb",
+                "foodSafetyCertification": "bbb",
+                "expiredDate": "2025-05-13T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 11111,
+                "quantityPerCarton": 6,
+                "unit": "KG",
+                "priceOrigin": 598000,
+                "pricePromotion": 6000,
+                "category": {
+                    "id": "08dd6362-fa02-40a6-8dfa-f702ca7b8c60",
+                    "categoryName": "Trà túi lọc Teaespresso",
+                    "createAt": "2025-03-15T08:44:50.885826",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T08:51:28.024644",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "TRA",
+                "images": [
+                    {
+                        "id": "08dd6363-e7c7-42aa-8e0b-fc04fe9284a4",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra_dau_hoa_qua_6836e3ae9254450395652493839aab67_grande.jpg?alt=media&token=36fe0dc9-11eb-47d7-a343-9fb19b88c97e",
+                        "ingredientId": "08dd6363-e6f4-423b-85f2-8fa10373854c"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6363-e841-49eb-8355-b901fe6898b5",
+                        "ingredientId": "08dd6363-e6f4-423b-85f2-8fa10373854c",
+                        "quantity": 111,
+                        "productType": "BAG"
+                    },
+                    {
+                        "id": "08dd6363-e6f4-42d3-8d9b-8c0794cfda4e",
+                        "ingredientId": "08dd6363-e6f4-423b-85f2-8fa10373854c",
+                        "quantity": 75,
+                        "productType": "BIN"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                "ingredientCode": "P19357993",
+                "supplier": "Trà Lộc Phát",
+                "ingredientName": "Trà đen",
+                "description": "Giúp giải độc cơ thể, tạo cảm giác hưng phấn, sảng khoái và thanh mát cho cơ thể",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2027-03-14T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 3,
+                "quantityPerCarton": 3,
+                "unit": "KG",
+                "priceOrigin": 199000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-d15a-4ae1-8ee5-60c1ff5169dc",
+                    "categoryName": "Trà",
+                    "createAt": "2025-03-15T12:18:27.582224",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:22:28.01684",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "TRA",
+                "images": [
+                    {
+                        "id": "08dd6381-61b6-4b95-8c6a-a11176f4eb4d",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-01.webp?alt=media&token=d6a2af3a-26aa-4d56-834a-3a5cb1d802b3",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    },
+                    {
+                        "id": "08dd6381-61f1-4d15-82fd-fc30d5eafdd0",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-1kg.webp?alt=media&token=5beb1de1-ebb2-4a34-afa0-24022ceff4b8",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    },
+                    {
+                        "id": "08dd6381-622d-4a18-8575-8619d9e3973b",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-tra-pha-tra-sua-dam-vi-tra.webp?alt=media&token=8546fbab-a90c-49b1-bbcb-89dfaa9e2007",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6381-60e5-4453-8ffa-39305b5c862a",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                        "quantity": 17,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                "ingredientCode": "P82934983",
+                "supplier": "BENSFOODS",
+                "ingredientName": "BỘT KEM BÉO BENSFOODS",
+                "description": "Ưu điểm sản phẩm:\n\nĐược làm từ nguồn nguyên liệu cao cấp\nCó mùi, màu, vị sữa đặc trưng\nĐộ béo 25-30%\nDùng cho bánh mỳ, bánh ngọt, trà sữa, nhân kem, kem lạnh,…\nSản phẩm có đầy đủ chứng nhận VSATTP",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-09-29T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 10,
+                "unit": "KG",
+                "priceOrigin": 74000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:34:11.795127",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6383-0538-4e8a-8b2b-0d2d2d716022",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/Botkembeo?alt=media&token=76aa12cb-6518-4667-a935-0820d5e001b7",
+                        "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6383-0461-4979-89fa-4dcb60a28401",
+                        "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                        "quantity": 14,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd6a00-f0e8-45da-8624-076751104b5c",
+                "ingredientId": "08dd6363-e6f4-423b-85f2-8fa10373854c",
+                "ingredientName": "Trà Dâu Hoa Quả (Strawberry Fruity Tea) - Teaespresso",
+                "weightOfIngredient": 0.5
+            },
+            {
+                "id": "08dd6a00-f166-4534-89b9-86cae84ff883",
+                "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                "ingredientName": "Trà đen",
+                "weightOfIngredient": 0.3
+            },
+            {
+                "id": "08dd6a00-f1e4-4210-8857-cf2115965b3a",
+                "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                "ingredientName": "BỘT KEM BÉO BENSFOODS",
+                "weightOfIngredient": 0.4
+            }
+        ]
+    },
+    {
+        "id": "08dd6a00-a6c2-489e-8ef3-67b6804871d1",
+        "recipeTitle": "Trà sữa dâu tây hạnh nhân",
+        "content": "Bản năng cấp của trà sữa dâu tây",
+        "imageUrl": "https://gongcha.com.vn/wp-content/uploads/2024/01/da%CC%82u.395x280.t-760x560.jpg",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-194c-4199-8447-0b3fc7b82b87",
+            "categoryName": "Công thức mới nhất",
+            "createAt": "2025-03-15T07:26:58.916719",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                "ingredientCode": "P21221217",
+                "supplier": "BENUSCream",
+                "ingredientName": "BỘT TRÀ SỮA DÂU",
+                "description": "Sản phẩm Bột trà Sữa Truyền thống  đang được rất nhiều bà nội trợ, chủ quán giải khát, chủ nhà hàng ưa chuộng và tin tưởng bởi chất lượng hương vị và cam kết về độ an toàn từ thương hiệu Benuscream.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 107000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:27:23.843392",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638a-73d6-495e-842f-88014e43f817",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/dau2-846b6808-65c1-41e6-a660-2c55a290922d.webp?alt=media&token=a1afbf02-f25d-479c-807b-ad7103eba5cf",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571"
+                    },
+                    {
+                        "id": "08dd638a-7414-47e3-8331-3277ff5df11e",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/cach-lam-tra-sua-dau-5.jpg.jpg?alt=media&token=4d21c587-2aa7-41e6-9ada-9c36fcec4e0e",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638a-72fe-4f3a-8b46-5b3b7397cc48",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                        "quantity": 16,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientCode": "P30106370",
+                "supplier": "Gia Uy",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "description": "1kg hạt trân châu nấu với 8kg nước\nNấu nước sôi cho hạt trân châu vào khấy đều và nấu ủ theo thời gian ở trên. Sau đó rửa sạch với nước, thêm đường hoặc mật ong là sử dụng được",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 2,
+                "quantityPerCarton": 10,
+                "unit": "KG",
+                "priceOrigin": 56000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-59bc-412b-8df1-3f3babe81a68",
+                    "categoryName": "Toppinh",
+                    "createAt": "2025-03-15T12:15:06.893787",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:35:21.694602",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638b-90a9-47e8-8863-403e8ac91b53",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/vinbar__1__33e04ccdd19c429390749d3be336dc79_1024x1024.webp?alt=media&token=0288e2f2-fd7c-49fe-ad43-36dad2ff0908",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638b-8fd0-4e29-8003-12aeca6a5731",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                        "quantity": 12,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                "ingredientCode": "P82934983",
+                "supplier": "BENSFOODS",
+                "ingredientName": "BỘT KEM BÉO BENSFOODS",
+                "description": "Ưu điểm sản phẩm:\n\nĐược làm từ nguồn nguyên liệu cao cấp\nCó mùi, màu, vị sữa đặc trưng\nĐộ béo 25-30%\nDùng cho bánh mỳ, bánh ngọt, trà sữa, nhân kem, kem lạnh,…\nSản phẩm có đầy đủ chứng nhận VSATTP",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-09-29T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 10,
+                "unit": "KG",
+                "priceOrigin": 74000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:34:11.795127",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6383-0538-4e8a-8b2b-0d2d2d716022",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/Botkembeo?alt=media&token=76aa12cb-6518-4667-a935-0820d5e001b7",
+                        "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6383-0461-4979-89fa-4dcb60a28401",
+                        "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                        "quantity": 14,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd6a00-a77c-4dfe-86fa-e54aa2478548",
+                "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                "ingredientName": "BỘT TRÀ SỮA DÂU",
+                "weightOfIngredient": 0.5
+            },
+            {
+                "id": "08dd6a00-a836-493f-8e24-23485ccc3229",
+                "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "weightOfIngredient": 0.3
+            },
+            {
+                "id": "08dd6a00-a8b5-4390-8f6e-c4d4f9260d57",
+                "ingredientId": "08dd6383-0461-491c-8324-0c2ab24ec423",
+                "ingredientName": "BỘT KEM BÉO BENSFOODS",
+                "weightOfIngredient": 0.4
+            }
+        ]
+    },
+    {
+        "id": "08dd6a00-6e6a-4d26-8b10-a346375faf8e",
+        "recipeTitle": "Trà sữa dâu tây",
+        "content": "Dành cho tín đam mê dâu tây và trà sữa",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHmoQ6h3FlhuOMZnnpYcK7xO0KuE9Zv5krJQ&s",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-194c-4199-8447-0b3fc7b82b87",
+            "categoryName": "Công thức mới nhất",
+            "createAt": "2025-03-15T07:26:58.916719",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                "ingredientCode": "P21221217",
+                "supplier": "BENUSCream",
+                "ingredientName": "BỘT TRÀ SỮA DÂU",
+                "description": "Sản phẩm Bột trà Sữa Truyền thống  đang được rất nhiều bà nội trợ, chủ quán giải khát, chủ nhà hàng ưa chuộng và tin tưởng bởi chất lượng hương vị và cam kết về độ an toàn từ thương hiệu Benuscream.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 107000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:27:23.843392",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638a-73d6-495e-842f-88014e43f817",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/dau2-846b6808-65c1-41e6-a660-2c55a290922d.webp?alt=media&token=a1afbf02-f25d-479c-807b-ad7103eba5cf",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571"
+                    },
+                    {
+                        "id": "08dd638a-7414-47e3-8331-3277ff5df11e",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/cach-lam-tra-sua-dau-5.jpg.jpg?alt=media&token=4d21c587-2aa7-41e6-9ada-9c36fcec4e0e",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638a-72fe-4f3a-8b46-5b3b7397cc48",
+                        "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                        "quantity": 16,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientCode": "P30106370",
+                "supplier": "Gia Uy",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "description": "1kg hạt trân châu nấu với 8kg nước\nNấu nước sôi cho hạt trân châu vào khấy đều và nấu ủ theo thời gian ở trên. Sau đó rửa sạch với nước, thêm đường hoặc mật ong là sử dụng được",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 2,
+                "quantityPerCarton": 10,
+                "unit": "KG",
+                "priceOrigin": 56000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-59bc-412b-8df1-3f3babe81a68",
+                    "categoryName": "Toppinh",
+                    "createAt": "2025-03-15T12:15:06.893787",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:35:21.694602",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638b-90a9-47e8-8863-403e8ac91b53",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/vinbar__1__33e04ccdd19c429390749d3be336dc79_1024x1024.webp?alt=media&token=0288e2f2-fd7c-49fe-ad43-36dad2ff0908",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638b-8fd0-4e29-8003-12aeca6a5731",
+                        "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                        "quantity": 12,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd6a00-6eed-4843-8abc-d916c8805a0a",
+                "ingredientId": "08dd638a-72fe-4c3e-8522-2203f9702571",
+                "ingredientName": "BỘT TRÀ SỮA DÂU",
+                "weightOfIngredient": 0.5
+            },
+            {
+                "id": "08dd6a00-6f6a-4712-8359-b9fcabc41923",
+                "ingredientId": "08dd638b-8fd0-4de0-8c49-b74eaf4eb187",
+                "ingredientName": "TRÂN CHÂU GIA UY ĐƯỜNG ĐEN",
+                "weightOfIngredient": 0.3
+            }
+        ]
+    },
+    {
+        "id": "08dd6a00-2017-4d11-8350-31fe6410c18d",
+        "recipeTitle": "Trà sữa socola kem béo",
+        "content": "Dành cho tín đồ sicula",
+        "imageUrl": "https://file.hstatic.net/200000868155/file/1926-post-cach-lam-tra-sua-socola-beo-thom-don-gian-tai-nha-1.jpg",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-194c-4199-8447-0b3fc7b82b87",
+            "categoryName": "Công thức mới nhất",
+            "createAt": "2025-03-15T07:26:58.916719",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                "ingredientCode": "P15564500",
+                "supplier": "BENUSCream",
+                "ingredientName": "Bột Trà sữa cacao than tre",
+                "description": "Sảm phẩm không sử dụng chất bảo quản và chất tạo ngọt.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-14T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 3,
+                "unit": "KG",
+                "priceOrigin": 128000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": true,
+                "rate": 0,
+                "createAt": "2025-03-15T12:14:21.210851",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6380-3f8d-4a47-853b-db7a26a896fe",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/caco.webp?alt=media&token=0e9b87e8-36db-45ad-87dc-cb104953bd32",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520"
+                    },
+                    {
+                        "id": "08dd6380-3fc8-4c3f-8f3d-d73ddb3a6565",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/vn-11134207-7r98o-lpqeqd88sunr07.jfif?alt=media&token=914de978-0d2a-4f74-980b-78d1f045d85e",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6380-3ebc-40c2-8479-020168586466",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                        "quantity": 18,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd6382-a711-4449-82c4-592a544dd622",
+                "ingredientCode": "P20524430",
+                "supplier": "lúave",
+                "ingredientName": "BỘT KEM BÉO THỰC VẬT C - FRAPPE",
+                "description": "Thành phần: Glucose Syrup, dầu dừa tinh luyện, Caseinate, Mono và diglycerides.",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 128000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:31:35.251346",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6382-a7df-416a-8490-8ebbe0fdab65",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/kem_beo_thuc_vat_c_frappe.webp?alt=media&token=8f325a9a-d71c-481d-a21f-e80b13972367",
+                        "ingredientId": "08dd6382-a711-4449-82c4-592a544dd622"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6382-a711-44da-83c3-7d89636a4683",
+                        "ingredientId": "08dd6382-a711-4449-82c4-592a544dd622",
+                        "quantity": 23,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd6a00-2095-4d22-8295-d316bd04ab34",
+                "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                "ingredientName": "Bột Trà sữa cacao than tre",
+                "weightOfIngredient": 0.4
+            },
+            {
+                "id": "08dd6a00-2152-4660-8a69-a9aff7e0bf83",
+                "ingredientId": "08dd6382-a711-4449-82c4-592a544dd622",
+                "ingredientName": "BỘT KEM BÉO THỰC VẬT C - FRAPPE",
+                "weightOfIngredient": 0.6
+            }
+        ]
+    },
+    {
+        "id": "08dd69ff-fcd4-4862-8dc5-432a9350c461",
+        "recipeTitle": "Trà sữa socola",
+        "content": "Dành cho tín đồ sicula",
+        "imageUrl": "https://gongcha.com.vn/wp-content/uploads/2018/02/Tr%C3%A0-s%E1%BB%AFa-Chocolate-2.png",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-194c-4199-8447-0b3fc7b82b87",
+            "categoryName": "Công thức mới nhất",
+            "createAt": "2025-03-15T07:26:58.916719",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd638a-e98f-4b3e-87d6-3f01ace9c36d",
+                "ingredientCode": "P49666899",
+                "supplier": "KING",
+                "ingredientName": "BỘT SOCOLA KING",
+                "description": "Bột Socola King là một trong những bột pha chế được yêu thích nhất trên thế giới bởi hương vị ngọt ngào và giá trị dinh dưỡng của nó.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 205000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:30:42.775817",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638a-ea62-40c5-8f42-4134d63cc192",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/bot-socola-king-1kg.webp?alt=media&token=73d97ad5-39f5-4ab0-8efa-fc0d7dd1b24f",
+                        "ingredientId": "08dd638a-e98f-4b3e-87d6-3f01ace9c36d"
+                    },
+                    {
+                        "id": "08dd638a-ea9e-4d15-8d47-5d84ac7d4134",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/bot-caacao-mau-nau-do.webp?alt=media&token=26511cc0-bf6f-444b-a36c-97e15ef434c9",
+                        "ingredientId": "08dd638a-e98f-4b3e-87d6-3f01ace9c36d"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638a-e98f-4bd3-8ee1-0026f0821501",
+                        "ingredientId": "08dd638a-e98f-4b3e-87d6-3f01ace9c36d",
+                        "quantity": 7,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd69ff-fd93-4c42-87c0-0e415d261d72",
+                "ingredientId": "08dd638a-e98f-4b3e-87d6-3f01ace9c36d",
+                "ingredientName": "BỘT SOCOLA KING",
+                "weightOfIngredient": 0.4
+            }
+        ]
+    },
+    {
+        "id": "08dd69ff-ba5e-4f3a-83cd-bd4b806a12aa",
+        "recipeTitle": "Trà sữa đặc biệt",
+        "content": "Bất ngờ với khả năng mix",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI44_h3BqcCiGt5Bep-EC3gGF8t2sdljOFvA&s",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-0d3b-40c9-8916-5ef688c31d8e",
+            "categoryName": "Công thức pha chế đặc biệt",
+            "createAt": "2025-03-15T07:26:38.67232",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6382-4507-45fd-82ae-434cf3f86923",
+                "ingredientCode": "P78656940",
+                "supplier": "BENUSCream",
+                "ingredientName": "BỘT KEM BÉO PHA TRÀ SỮA",
+                "description": "Thích hợp làm cho Đồ uống trà sữa ",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-29T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 3,
+                "unit": "KG",
+                "priceOrigin": 69000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:28:50.766118",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6382-45d7-4acc-8cb6-12d3f5050668",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/beo.webp?alt=media&token=f1c84416-df12-46ce-8292-b7d17e9d62fb",
+                        "ingredientId": "08dd6382-4507-45fd-82ae-434cf3f86923"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6382-4507-468c-8c69-3f940dc1aff9",
+                        "ingredientId": "08dd6382-4507-45fd-82ae-434cf3f86923",
+                        "quantity": 16,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd638b-44bb-4fb2-8fca-61d6c19d5a9a",
+                "ingredientCode": "P88649846",
+                "supplier": "Wings",
+                "ingredientName": "Trân châu đen Wings",
+                "description": "Topping tuyệt vời cho trà sữa",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 200,
+                "quantityPerCarton": 7,
+                "unit": "GRAM",
+                "priceOrigin": 14000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-59bc-412b-8df1-3f3babe81a68",
+                    "categoryName": "Toppinh",
+                    "createAt": "2025-03-15T12:15:06.893787",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T13:33:15.736883",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd638b-458e-4478-8282-56b6de3c1e2e",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/Tr%C3%A2n%20ch%C3%A2u.jfif?alt=media&token=d72671a4-3b9c-4060-8f88-baf7614b0857",
+                        "ingredientId": "08dd638b-44bb-4fb2-8fca-61d6c19d5a9a"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd638b-44bc-4027-8698-ee6a27876d75",
+                        "ingredientId": "08dd638b-44bb-4fb2-8fca-61d6c19d5a9a",
+                        "quantity": 16,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            },
+            {
+                "id": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                "ingredientCode": "P19357993",
+                "supplier": "Trà Lộc Phát",
+                "ingredientName": "Trà đen",
+                "description": "Giúp giải độc cơ thể, tạo cảm giác hưng phấn, sảng khoái và thanh mát cho cơ thể",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2027-03-14T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 3,
+                "quantityPerCarton": 3,
+                "unit": "KG",
+                "priceOrigin": 199000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6380-d15a-4ae1-8ee5-60c1ff5169dc",
+                    "categoryName": "Trà",
+                    "createAt": "2025-03-15T12:18:27.582224",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:22:28.01684",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "TRA",
+                "images": [
+                    {
+                        "id": "08dd6381-61b6-4b95-8c6a-a11176f4eb4d",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-01.webp?alt=media&token=d6a2af3a-26aa-4d56-834a-3a5cb1d802b3",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    },
+                    {
+                        "id": "08dd6381-61f1-4d15-82fd-fc30d5eafdd0",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-1kg.webp?alt=media&token=5beb1de1-ebb2-4a34-afa0-24022ceff4b8",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    },
+                    {
+                        "id": "08dd6381-622d-4a18-8575-8619d9e3973b",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tra-den-loc-phat-tra-pha-tra-sua-dam-vi-tra.webp?alt=media&token=8546fbab-a90c-49b1-bbcb-89dfaa9e2007",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6381-60e5-4453-8ffa-39305b5c862a",
+                        "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                        "quantity": 17,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd69ff-badd-4308-8192-a5f05ab6ea01",
+                "ingredientId": "08dd6382-4507-45fd-82ae-434cf3f86923",
+                "ingredientName": "BỘT KEM BÉO PHA TRÀ SỮA",
+                "weightOfIngredient": 0.3
+            },
+            {
+                "id": "08dd69ff-bb58-4941-82e6-02d43c6907fd",
+                "ingredientId": "08dd638b-44bb-4fb2-8fca-61d6c19d5a9a",
+                "ingredientName": "Trân châu đen Wings",
+                "weightOfIngredient": 0.6
+            },
+            {
+                "id": "08dd69ff-bbd3-438d-80fa-2b76e6cbc99a",
+                "ingredientId": "08dd6381-60e5-43d4-8cd4-d124b4300c94",
+                "ingredientName": "Trà đen",
+                "weightOfIngredient": 0.5
+            }
+        ]
+    },
+    {
+        "id": "08dd69ff-5e87-46de-871a-696dc8abb00e",
+        "recipeTitle": "Trà sữa thái xanh",
+        "content": "Bất ngờ với vị thái xanh mới",
+        "imageUrl": "https://bizweb.dktcdn.net/100/421/036/files/tra-sua-thai-la-gi.jpg?v=1616211316823",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6357-d40a-41a9-82d2-70826f4ee24f",
+            "categoryName": "Công thức trà sữa thái xanh",
+            "createAt": "2025-03-15T07:25:02.721441",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6385-2cf4-4b13-8fa9-8dc61b48ca04",
+                "ingredientCode": "P43655626",
+                "supplier": "Déli",
+                "ingredientName": "Bột Trà Sữa Thái Xanh Déli",
+                "description": "Có tác dụng cải thiện sức khỏe và chăm sóc làn da. Uống một ly vào buổi sáng sẽ giúp bạn bổ sung năng lượng, tăng sức dẻo dai, giải độc cơ thể. Đặc biệt, trà thái xanh được kết hợp với bột sữa gầy đẩy mạnh khả năng làm trẻ hóa làn da và chống nhăn. Mang đến cho bạn một làn da tươi trẻ từ bên trong, căng mịn bên ngoài.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2027-03-30T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 187000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": true,
+                "rate": 0,
+                "createAt": "2025-03-15T12:49:38.858615",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6385-2dc9-420c-8662-007dd8bf3435",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/tstx.jpg?alt=media&token=aae67773-655f-40db-a04d-de15bdaecc3c",
+                        "ingredientId": "08dd6385-2cf4-4b13-8fa9-8dc61b48ca04"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6385-2cf4-4cb7-8c1e-91c9194aa154",
+                        "ingredientId": "08dd6385-2cf4-4b13-8fa9-8dc61b48ca04",
+                        "quantity": 12,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd69ff-5f07-4a05-8bbb-1d6b98513eda",
+                "ingredientId": "08dd6385-2cf4-4b13-8fa9-8dc61b48ca04",
+                "ingredientName": "Bột Trà Sữa Thái Xanh Déli",
+                "weightOfIngredient": 0.3
+            }
+        ]
+    },
+    {
+        "id": "08dd69ff-18ed-4545-849c-e0441c58f455",
+        "recipeTitle": "Trà sữa khoai môn",
+        "content": "Thơm ngon vị khoai môn",
+        "imageUrl": "c",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6358-194c-4199-8447-0b3fc7b82b87",
+            "categoryName": "Công thức mới nhất",
+            "createAt": "2025-03-15T07:26:58.916719",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6384-e558-4407-8047-9d8df9cddb99",
+                "ingredientCode": "P19621939",
+                "supplier": "Taro",
+                "ingredientName": "Bột Trà Sữa Khoai Môn King",
+                "description": "Bột trà sữa khoai môn king có thành phần 100% củ khoai môn nguyên chất. Sản phẩm được xem là sự lựa chọn tốt nhất để tăng cường hương vị cho các món pha chế.",
+                "foodSafetyCertification": "HACCP",
+                "expiredDate": "2026-09-29T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 5,
+                "unit": "KG",
+                "priceOrigin": 151000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": false,
+                "rate": 0,
+                "createAt": "2025-03-15T12:47:38.707202",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6384-e62f-4638-832b-f23b663c3320",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/bottrasuakhoaimonking1-240.jpg?alt=media&token=b1942afc-08e6-4505-8bc8-8e9f048175c1",
+                        "ingredientId": "08dd6384-e558-4407-8047-9d8df9cddb99"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6384-e558-449b-808f-c5c43a19430e",
+                        "ingredientId": "08dd6384-e558-4407-8047-9d8df9cddb99",
+                        "quantity": 34,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd69ff-196d-4d85-86a6-54b45d305f66",
+                "ingredientId": "08dd6384-e558-4407-8047-9d8df9cddb99",
+                "ingredientName": "Bột Trà Sữa Khoai Môn King",
+                "weightOfIngredient": 0.5
+            }
+        ]
+    },
+    {
+        "id": "08dd69fe-c24d-4d7f-8e61-3cf5036cf870",
+        "recipeTitle": "Milo dầm",
+        "content": "Đại thoi",
+        "imageUrl": "https://nguyenlieukimtinh.com/wp-content/uploads/2023/12/milo-dam-1.jpg",
+        "recipeStatus": "INACTIVE",
+        "recipeLevel": "PUBLIC",
+        "category": {
+            "id": "08dd6357-c5cd-40e3-88c1-40d566c56349",
+            "categoryName": "Công thức milo dầm",
+            "createAt": "2025-03-15T07:24:38.833194",
+            "categoryStatus": "ACTIVE",
+            "categoryType": "CATEGORY_RECIPE"
+        },
+        "ingredients": [
+            {
+                "id": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                "ingredientCode": "P15564500",
+                "supplier": "BENUSCream",
+                "ingredientName": "Bột Trà sữa cacao than tre",
+                "description": "Sảm phẩm không sử dụng chất bảo quản và chất tạo ngọt.",
+                "foodSafetyCertification": "ISO 22000",
+                "expiredDate": "2026-03-14T17:00:00",
+                "ingredientStatus": "ACTIVE",
+                "weightPerBag": 1,
+                "quantityPerCarton": 3,
+                "unit": "KG",
+                "priceOrigin": 128000,
+                "pricePromotion": 0,
+                "category": {
+                    "id": "08dd6357-a14b-42c2-8239-2daa426656b7",
+                    "categoryName": "Bột pha trà sửa",
+                    "createAt": "2025-03-15T07:23:37.580823",
+                    "categoryStatus": "ACTIVE",
+                    "categoryType": "CATEGORY_PRODUCT"
+                },
+                "isSale": true,
+                "rate": 0,
+                "createAt": "2025-03-15T12:14:21.210851",
+                "updateAt": "0001-01-01T00:00:00",
+                "ingredientType": "BOT",
+                "images": [
+                    {
+                        "id": "08dd6380-3f8d-4a47-853b-db7a26a896fe",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/caco.webp?alt=media&token=0e9b87e8-36db-45ad-87dc-cb104953bd32",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520"
+                    },
+                    {
+                        "id": "08dd6380-3fc8-4c3f-8f3d-d73ddb3a6565",
+                        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/fir-app-2f0da.appspot.com/o/vn-11134207-7r98o-lpqeqd88sunr07.jfif?alt=media&token=914de978-0d2a-4f74-980b-78d1f045d85e",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520"
+                    }
+                ],
+                "ingredientQuantities": [
+                    {
+                        "id": "08dd6380-3ebc-40c2-8479-020168586466",
+                        "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                        "quantity": 18,
+                        "productType": "BAG"
+                    }
+                ],
+                "ingredientReviews": null
+            }
+        ],
+        "ingredientRecipeResponse": [
+            {
+                "id": "08dd69fe-c2fb-4427-8f0f-5dfe8a737547",
+                "ingredientId": "08dd6380-3ebc-403c-86c5-d081c030e520",
+                "ingredientName": "Bột Trà sữa cacao than tre",
+                "weightOfIngredient": 0.2
+            }
+        ]
+    }
+]
