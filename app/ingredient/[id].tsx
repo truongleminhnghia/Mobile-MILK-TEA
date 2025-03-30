@@ -1,48 +1,86 @@
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { appColor } from '@/constants/appColor.constant';
+import { appColor } from '../../constants/appColor.constant';
 import { Ionicons } from '@expo/vector-icons';
+import ingredientAPI from '../../apis/ingredient.api';
 
 interface IngredientDetail {
   id: string;
+  ingredientCode: string;
   ingredientName: string;
   description: string;
   supplier: string;
   foodSafetyCertification: string;
   expiredDate: string;
+  ingredientStatus: string;
   weightPerBag: number;
   quantityPerCarton: number;
   unit: string;
   priceOrigin: number;
   pricePromotion: number;
-  images: { imageUrl: string }[];
   category: {
+    id: string;
     categoryName: string;
+    categoryStatus: string;
+    categoryType: string;
+    createAt: string;
   };
+  isSale: boolean;
+  rate: number;
+  createAt: string;
+  updateAt: string;
+  ingredientType: string;
+  images: {
+    id: string;
+    imageUrl: string;
+    ingredientId: string;
+  }[];
   ingredientQuantities: {
+    id: string;
+    ingredientId: string;
     quantity: number;
     productType: string;
   }[];
+  ingredientReviews: any[];
+}
+
+interface APIResponse {
+  code: number;
+  message: string;
+  success: boolean;
+  data: IngredientDetail;
 }
 
 const IngredientDetail = () => {
   const { id } = useLocalSearchParams();
   const router = useRouter();
   const [ingredient, setIngredient] = useState<IngredientDetail | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchIngredient = async () => {
-      try {
-        const data = require('../../services/stores/ingredient.json');
-        const found = data.find((item: IngredientDetail) => item.id === id);
-        setIngredient(found);
-      } catch (error) {
-        console.error('Error loading ingredient:', error);
-      }
-    };
     fetchIngredient();
   }, [id]);
+
+  const fetchIngredient = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await ingredientAPI.getById(id as string) as unknown as APIResponse;
+      if (response.success) {
+        console.log(response.data);
+        setIngredient(response.data);
+      } else {
+        setError('Không thể tải thông tin nguyên liệu');
+      }
+    } catch (error) {
+      console.error('Error loading ingredient:', error);
+      setError('Đã có lỗi xảy ra');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const formatPrice = (price: number) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ";
@@ -53,10 +91,21 @@ const IngredientDetail = () => {
     return date.toLocaleDateString('vi-VN');
   };
 
-  if (!ingredient) {
+  if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" color={appColor.BG_PRIMARY} />
+      </View>
+    );
+  }
+
+  if (error || !ingredient) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={fetchIngredient}>
+          <Text style={styles.retryText}>Thử lại</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -81,14 +130,23 @@ const IngredientDetail = () => {
           showsHorizontalScrollIndicator={false}
           style={styles.imageContainer}
         >
-          {ingredient.images.map((image, index) => (
-            <Image
-              key={index}
-              source={{ uri: image.imageUrl }}
-              style={styles.image}
-              resizeMode="cover"
-            />
-          ))}
+          {ingredient.images && ingredient.images.length > 0 ? (
+            ingredient.images.map((image, index) => {
+              console.log('Rendering image:', image.imageUrl);
+              return (
+                <Image
+                  key={image.id}
+                  source={{ uri: image.imageUrl }}
+                  style={[styles.image, { width: Dimensions.get('window').width }]}
+                  resizeMode="cover"
+                />
+              );
+            })
+          ) : (
+            <View style={[styles.image, { justifyContent: 'center', alignItems: 'center' }]}>
+              <Text>Không có hình ảnh</Text>
+            </View>
+          )}
         </ScrollView>
 
         {/* Content */}
@@ -191,10 +249,11 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: 300,
+    width: '100%',
   },
   image: {
-    width: '100%',
     height: 300,
+    backgroundColor: appColor.GRAY3,
   },
   content: {
     padding: 16,
@@ -277,6 +336,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addToCartText: {
+    color: appColor.WHITE,
+    fontSize: 16,
+    fontFamily: 'outfit-medium',
+  },
+  errorText: {
+    fontSize: 16,
+    color: appColor.TEXT,
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  retryButton: {
+    backgroundColor: appColor.BG_PRIMARY,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  retryText: {
     color: appColor.WHITE,
     fontSize: 16,
     fontFamily: 'outfit-medium',

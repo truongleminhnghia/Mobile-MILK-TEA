@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { appColor } from '@/constants/appColor.constant';
+import { View, Text, StyleSheet, SafeAreaView, Image, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native';
+import { appColor } from '../../constants/appColor.constant';
 import { Ionicons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch } from 'react-redux';
+import { addAuth } from '../../redux/reducers/authReducer';
+import { useRouter } from 'expo-router';
+import accountAPI from '../../apis/account.api';
 
 interface ProfileData {
   firstName: string;
@@ -19,33 +24,86 @@ interface ProfileData {
 
 const Profile = () => {
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>("");
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const data = require('../../services/stores/profile.json');
-        setProfileData(data);
-      } catch (error) {
-        console.error('Error loading profile:', error);
-      }
-    };
     fetchProfile();
   }, []);
+
+  const fetchProfile = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      
+      const response = await accountAPI.getProfile();
+      if (response?.data) {
+        setProfileData(response.data);
+      }
+    } catch (error: any) {
+      console.error('Error fetching profile:', error);
+      if (error?.response?.status === 401) {
+        // Token expired or invalid, redirect to login
+        handleLogout();
+      } else {
+        setError("Không thể tải thông tin. Vui lòng thử lại sau.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('vi-VN');
   };
 
-  const handleLogout = () => {
-    // Implement logout logic here
-    console.log('Logging out...');
+  const handleLogout = async () => {
+    try {
+      // Xóa token từ AsyncStorage
+      await AsyncStorage.removeItem('accessToken');
+      
+      // Xóa thông tin user trong Redux store
+      dispatch(
+        addAuth({
+          accountResponse: null,
+          token: "",
+        })
+      );
+
+      // Chuyển về màn hình đăng nhập
+      router.replace('/auths/SignIn');
+      
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
   };
+
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={appColor.BG_PRIMARY} />
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={fetchProfile}>
+          <Text style={styles.retryText}>Thử lại</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   if (!profileData) {
     return (
       <View style={styles.loadingContainer}>
-        <Text>Loading...</Text>
+        <Text>Không có dữ liệu</Text>
       </View>
     );
   }
@@ -188,6 +246,24 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   logoutText: {
+    color: appColor.WHITE,
+    fontSize: 16,
+    fontFamily: 'outfit-medium',
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 16,
+    marginBottom: 16,
+    textAlign: 'center',
+    paddingHorizontal: 32,
+  },
+  retryButton: {
+    backgroundColor: appColor.BG_PRIMARY,
+    paddingVertical: 8,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+  },
+  retryText: {
     color: appColor.WHITE,
     fontSize: 16,
     fontFamily: 'outfit-medium',

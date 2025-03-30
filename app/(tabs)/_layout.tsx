@@ -1,8 +1,8 @@
 import { Tabs } from "expo-router";
 import { View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { appColor } from "@/constants/appColor.constant";
-import Header from "@/components/shared/Header";
+import { appColor } from "../../constants/appColor.constant";
+import Header from "../../components/shared/Header";
 
 export default function TabLayout() {
   const getTabScreenOptions = (showBack = true) => ({

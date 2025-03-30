@@ -1,60 +1,98 @@
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { appColor } from '@/constants/appColor.constant';
+import { appColor } from '../../constants/appColor.constant';
 import { Ionicons } from '@expo/vector-icons';
+import recipeAPI from '../../apis/recipe.api';
 
-interface RecipeDetail {
+interface Recipe {
   id: string;
-  recipeTitle: string;
-  content: string;
-  imageUrl: string;
+  recipeName: string;
+  description: string;
   recipeStatus: string;
-  recipeLevel: string;
+  recipeType: string;
+  createAt: string;
+  updateAt: string;
+  images: {
+    id: string;
+    imageUrl: string;
+    recipeId: string;
+  }[];
   category: {
+    id: string;
     categoryName: string;
+    categoryStatus: string;
+    categoryType: string;
     createAt: string;
   };
   ingredients: {
     id: string;
-    ingredientName: string;
-    images: { imageUrl: string }[];
-    priceOrigin: number;
+    quantity: number;
+    unit: string;
+    ingredient: {
+      id: string;
+      ingredientName: string;
+    };
   }[];
-  ingredientRecipeResponse: {
-    ingredientId: string;
-    ingredientName: string;
-    weightOfIngredient: number;
+  steps: {
+    id: string;
+    stepNumber: number;
+    description: string;
   }[];
+}
+
+interface APIResponse {
+  code: number;
+  message: string;
+  success: boolean;
+  data: Recipe;
 }
 
 const RecipeDetail = () => {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const [recipe, setRecipe] = useState<RecipeDetail | null>(null);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchRecipe = async () => {
-      try {
-        const data = require('../../services/stores/recipes.json');
-        const found = data.find((item: RecipeDetail) => item.id === id);
-        setRecipe(found);
-      } catch (error) {
-        console.error('Error loading recipe:', error);
-      }
-    };
     fetchRecipe();
   }, [id]);
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('vi-VN');
+  const fetchRecipe = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await recipeAPI.getById(id as string) as APIResponse;
+      if (response.success) {
+        console.log(response.data);
+        setRecipe(response.data);
+      } else {
+        setError('Không thể tải thông tin công thức');
+      }
+    } catch (error) {
+      console.error('Error loading recipe:', error);
+      setError('Đã có lỗi xảy ra');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  if (!recipe) {
+  if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <Text>Loading...</Text>
+        <ActivityIndicator size="large" color={appColor.BG_PRIMARY} />
+      </View>
+    );
+  }
+
+  if (error || !recipe) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.errorText}>{error}</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={fetchRecipe}>
+          <Text style={styles.retryText}>Thử lại</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -72,54 +110,67 @@ const RecipeDetail = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Main Image */}
-        <Image
-          source={{ uri: recipe.imageUrl }}
-          style={styles.mainImage}
-          resizeMode="cover"
-        />
+        {/* Images */}
+        <ScrollView 
+          horizontal 
+          pagingEnabled 
+          showsHorizontalScrollIndicator={false}
+          style={styles.imageContainer}
+        >
+          {recipe.images && recipe.images.length > 0 ? (
+            recipe.images.map((image) => (
+              <Image
+                key={image.id}
+                source={{ uri: image.imageUrl }}
+                style={[styles.image, { width: Dimensions.get('window').width }]}
+                resizeMode="cover"
+              />
+            ))
+          ) : (
+            <View style={[styles.image, { justifyContent: 'center', alignItems: 'center' }]}>
+              <Text>Không có hình ảnh</Text>
+            </View>
+          )}
+        </ScrollView>
 
         {/* Content */}
         <View style={styles.content}>
-          <View style={styles.titleSection}>
-            <Text style={styles.category}>{recipe.category.categoryName}</Text>
-            <Text style={styles.title}>{recipe.recipeTitle}</Text>
-            <Text style={styles.date}>
-              Ngày tạo: {formatDate(recipe.category.createAt)}
-            </Text>
+          <Text style={styles.category}>{recipe.category.categoryName}</Text>
+          <Text style={styles.title}>{recipe.recipeName}</Text>
+          
+          {/* Description */}
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.description}>{recipe.description}</Text>
           </View>
 
-          {/* Ingredients Section */}
-          <View style={styles.ingredientsSection}>
-            <Text style={styles.sectionTitle}>Nguyên liệu cần thiết</Text>
-            {recipe.ingredientRecipeResponse.map((item, index) => (
-              <TouchableOpacity 
-                key={index} 
-                style={styles.ingredientItem}
-                onPress={() => router.push(`/ingredient/${item.ingredientId}`)}
-              >
-                <View style={styles.ingredientInfo}>
-                  <Text style={styles.ingredientName}>{item.ingredientName}</Text>
-                  <Text style={styles.ingredientWeight}>
-                    {item.weightOfIngredient} kg
-                  </Text>
-                </View>
-                <Ionicons name="chevron-forward" size={20} color={appColor.TEXT} />
-              </TouchableOpacity>
+          {/* Ingredients */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Nguyên liệu</Text>
+            {recipe.ingredients.map((item) => (
+              <View key={item.id} style={styles.ingredientItem}>
+                <Text style={styles.ingredientName}>{item.ingredient.ingredientName}</Text>
+                <Text style={styles.ingredientQuantity}>
+                  {item.quantity} {item.unit}
+                </Text>
+              </View>
             ))}
           </View>
 
-          {/* Recipe Content */}
-          <View style={styles.recipeContent}>
-            <Text style={styles.sectionTitle}>Hướng dẫn thực hiện</Text>
-            <Text style={styles.description}>{recipe.content}</Text>
+          {/* Steps */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Các bước thực hiện</Text>
+            {recipe.steps
+              .sort((a, b) => a.stepNumber - b.stepNumber)
+              .map((step) => (
+                <View key={step.id} style={styles.stepItem}>
+                  <View style={styles.stepNumber}>
+                    <Text style={styles.stepNumberText}>{step.stepNumber}</Text>
+                  </View>
+                  <Text style={styles.stepDescription}>{step.description}</Text>
+                </View>
+              ))}
           </View>
         </View>
-
-        {/* Action Button */}
-        <TouchableOpacity style={styles.actionButton}>
-          <Text style={styles.actionButtonText}>Mua nguyên liệu</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -162,15 +213,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  mainImage: {
-    width: '100%',
+  imageContainer: {
     height: 300,
+    width: '100%',
+  },
+  image: {
+    height: 300,
+    backgroundColor: appColor.GRAY3,
   },
   content: {
     padding: 16,
-  },
-  titleSection: {
-    marginBottom: 24,
   },
   category: {
     fontSize: 14,
@@ -182,14 +234,18 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: appColor.TEXT,
     fontFamily: 'outfit-bold',
-    marginBottom: 8,
+    marginBottom: 12,
   },
-  date: {
+  descriptionContainer: {
+    marginBottom: 24,
+  },
+  description: {
     fontSize: 14,
-    color: appColor.TEXT_GRAY,
+    color: appColor.TEXT,
     fontFamily: 'outfit',
+    lineHeight: 20,
   },
-  ingredientsSection: {
+  section: {
     marginBottom: 24,
   },
   sectionTitle: {
@@ -200,45 +256,59 @@ const styles = StyleSheet.create({
   },
   ingredientItem: {
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    backgroundColor: appColor.GRAY3,
-    borderRadius: 12,
-    marginBottom: 8,
-  },
-  ingredientInfo: {
-    flex: 1,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: appColor.GRAY3,
   },
   ingredientName: {
-    fontSize: 16,
+    fontSize: 14,
     color: appColor.TEXT,
-    fontFamily: 'outfit-medium',
-    marginBottom: 4,
+    fontFamily: 'outfit',
   },
-  ingredientWeight: {
+  ingredientQuantity: {
     fontSize: 14,
     color: appColor.TEXT_GRAY,
     fontFamily: 'outfit',
   },
-  recipeContent: {
-    marginBottom: 24,
+  stepItem: {
+    flexDirection: 'row',
+    marginBottom: 16,
   },
-  description: {
-    fontSize: 16,
+  stepNumber: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: appColor.BG_PRIMARY,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  stepNumberText: {
+    color: appColor.WHITE,
+    fontSize: 14,
+    fontFamily: 'outfit-medium',
+  },
+  stepDescription: {
+    flex: 1,
+    fontSize: 14,
     color: appColor.TEXT,
     fontFamily: 'outfit',
-    lineHeight: 24,
+    lineHeight: 20,
   },
-  actionButton: {
+  errorText: {
+    fontSize: 16,
+    color: appColor.TEXT,
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  retryButton: {
     backgroundColor: appColor.BG_PRIMARY,
-    margin: 16,
-    padding: 16,
-    borderRadius: 12,
-    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
   },
-  actionButtonText: {
+  retryText: {
     color: appColor.WHITE,
     fontSize: 16,
     fontFamily: 'outfit-medium',

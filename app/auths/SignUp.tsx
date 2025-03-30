@@ -4,29 +4,34 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useNavigation, useRouter } from "expo-router";
-import { appColor } from "@/constants/appColor.constant";
+import { appColor } from "../../constants/appColor.constant";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from '../../configs/FireBaseConfig'
+import authenticationAPI from "../../apis/auth.api";
 
 // Định nghĩa kiểu cho các state
 interface State {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
-  confirmPassword: string; // Thêm trường xác nhận mật khẩu
-  fullNameError: string;
+  confirmPassword: string;
+  firstNameError: string;
+  lastNameError: string;
   emailError: string;
   passwordError: string;
-  confirmPasswordError: string; // Thêm lỗi cho xác nhận mật khẩu
+  confirmPasswordError: string;
+  loading: boolean;
+  errorMessage: string;
 }
 
 const SignUp: React.FC = () => {
   const navigation = useNavigation();
   const router = useRouter();
+  
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -35,14 +40,18 @@ const SignUp: React.FC = () => {
 
   // State với kiểu dữ liệu đã định nghĩa
   const [state, setState] = useState<State>({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
-    confirmPassword: "", // Thêm trường xác nhận mật khẩu
-    fullNameError: "",
+    confirmPassword: "",
+    firstNameError: "",
+    lastNameError: "",
     emailError: "",
     passwordError: "",
-    confirmPasswordError: "", // Thêm lỗi cho xác nhận mật khẩu
+    confirmPasswordError: "",
+    loading: false,
+    errorMessage: "",
   });
 
   // Hàm kiểm tra email hợp lệ
@@ -53,78 +62,88 @@ const SignUp: React.FC = () => {
 
   // Hàm kiểm tra mật khẩu hợp lệ
   const validatePassword = (password: string): boolean => {
-    return password.length >= 6; // Đảm bảo mật khẩu ít nhất 6 ký tự
+    return password.length >= 6;
   };
 
-  const handleSignUp = () => {
-    let isValid = true;
+  const handleSignUp = async () => {
+    try {
+      let isValid = true;
+      setState(prev => ({ ...prev, loading: true, errorMessage: "" }));
 
-    // Kiểm tra tên đầy đủ
-    if (!state.fullName) {
-      setState((prevState) => ({
-        ...prevState,
-        fullNameError: "Họ tên không được để trống",
-      }));
-      isValid = false;
-    } else {
-      setState((prevState) => ({ ...prevState, fullNameError: "" }));
+      // Validate firstName
+      if (!state.firstName.trim()) {
+        setState(prev => ({ ...prev, firstNameError: "Vui lòng nhập tên" }));
+        isValid = false;
+      }
+
+      // Validate lastName
+      if (!state.lastName.trim()) {
+        setState(prev => ({ ...prev, lastNameError: "Vui lòng nhập họ" }));
+        isValid = false;
+      }
+
+      // Validate email
+      if (!validateEmail(state.email)) {
+        setState(prev => ({ ...prev, emailError: "Email không hợp lệ" }));
+        isValid = false;
+      }
+
+      // Validate password
+      if (!validatePassword(state.password)) {
+        setState(prev => ({ ...prev, passwordError: "Mật khẩu phải có ít nhất 6 ký tự" }));
+        isValid = false;
+      }
+
+      // Validate confirm password
+      if (state.password !== state.confirmPassword) {
+        setState(prev => ({ ...prev, confirmPasswordError: "Mật khẩu xác nhận không khớp" }));
+        isValid = false;
+      }
+
+      if (!isValid) {
+        setState(prev => ({ ...prev, loading: false }));
+        return;
+      }
+
+      // Call register API
+      const response = await authenticationAPI.HandleAuthentication(
+        "register",
+        {
+          email: state.email,
+          password: state.password,
+          firstName: state.firstName,
+          lastName: state.lastName,
+          roleName: "ROLE_CUSTOMER"
+        },
+        "post"
+      );
+
+      if (response?.data) {
+        console.log("Register success:", response.data);
+        // Navigate to SignIn page
+        router.replace("/auths/SignIn");
+      }
+    } catch (error: any) {
+      console.error("Register error:", error);
+      if (error?.response?.status === 503) {
+        setState(prev => ({ 
+          ...prev, 
+          errorMessage: "Máy chủ đang bảo trì, vui lòng thử lại sau" 
+        }));
+      } else if (error?.response?.status === 400) {
+        setState(prev => ({ 
+          ...prev, 
+          errorMessage: "Email đã tồn tại trong hệ thống" 
+        }));
+      } else {
+        setState(prev => ({ 
+          ...prev, 
+          errorMessage: "Đã có lỗi xảy ra, vui lòng thử lại sau" 
+        }));
+      }
+    } finally {
+      setState(prev => ({ ...prev, loading: false }));
     }
-
-    // Kiểm tra email
-    if (!validateEmail(state.email)) {
-      setState((prevState) => ({
-        ...prevState,
-        emailError: "Email không hợp lệ. Vui lòng nhập lại.",
-      }));
-      isValid = false;
-    } else {
-      setState((prevState) => ({ ...prevState, emailError: "" }));
-    }
-
-    // Kiểm tra mật khẩu
-    if (!validatePassword(state.password)) {
-      setState((prevState) => ({
-        ...prevState,
-        passwordError: "Mật khẩu phải ít nhất 6 ký tự.",
-      }));
-      isValid = false;
-    } else {
-      setState((prevState) => ({ ...prevState, passwordError: "" }));
-    }
-
-    // Kiểm tra xác nhận mật khẩu
-    if (state.password !== state.confirmPassword) {
-      setState((prevState) => ({
-        ...prevState,
-        confirmPasswordError: "Mật khẩu xác nhận không khớp",
-      }));
-      isValid = false;
-    } else {
-      setState((prevState) => ({ ...prevState, confirmPasswordError: "" }));
-    }
-
-    // Nếu mọi thứ hợp lệ, xử lý đăng ký
-    if (isValid) {
-      console.log("Đăng ký thành công");
-      // Logic đăng ký ở đây
-      // Chuyển hướng về màn hình đăng nhập
-      router.push("/auths/SignIn");
-    }
-  };
-
-  const CreateAccount = () => {
-    createUserWithEmailAndPassword(auth, state.email, state.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log('user', user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage, errorCode);
-
-        // ..
-      });
   };
 
   return (
@@ -135,18 +154,37 @@ const SignUp: React.FC = () => {
       <Text style={styles.title}>Create Your Account</Text>
       <Text style={styles.subtitle}>Sign up to get started</Text>
 
+      {state.errorMessage ? (
+        <Text style={styles.errorText}>{state.errorMessage}</Text>
+      ) : null}
+
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>Họ tên</Text>
+        <Text style={styles.label}>Họ</Text>
         <TextInput
           style={styles.input}
-          placeholder="Nhập họ tên"
-          value={state.fullName}
+          placeholder="Nhập họ"
+          value={state.lastName}
           onChangeText={(text) =>
-            setState((prevState) => ({ ...prevState, fullName: text }))
+            setState((prev) => ({ ...prev, lastName: text, lastNameError: "" }))
           }
         />
-        {state.fullNameError ? (
-          <Text style={styles.errorText}>{state.fullNameError}</Text>
+        {state.lastNameError ? (
+          <Text style={styles.errorText}>{state.lastNameError}</Text>
+        ) : null}
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Tên</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Nhập tên"
+          value={state.firstName}
+          onChangeText={(text) =>
+            setState((prev) => ({ ...prev, firstName: text, firstNameError: "" }))
+          }
+        />
+        {state.firstNameError ? (
+          <Text style={styles.errorText}>{state.firstNameError}</Text>
         ) : null}
       </View>
 
@@ -157,9 +195,10 @@ const SignUp: React.FC = () => {
           placeholder="Nhập email"
           value={state.email}
           onChangeText={(text) =>
-            setState((prevState) => ({ ...prevState, email: text }))
+            setState((prev) => ({ ...prev, email: text, emailError: "" }))
           }
           keyboardType="email-address"
+          autoCapitalize="none"
         />
         {state.emailError ? (
           <Text style={styles.errorText}>{state.emailError}</Text>
@@ -173,7 +212,7 @@ const SignUp: React.FC = () => {
           placeholder="Nhập mật khẩu"
           value={state.password}
           onChangeText={(text) =>
-            setState((prevState) => ({ ...prevState, password: text }))
+            setState((prev) => ({ ...prev, password: text, passwordError: "" }))
           }
           secureTextEntry
         />
@@ -189,7 +228,7 @@ const SignUp: React.FC = () => {
           placeholder="Xác nhận mật khẩu"
           value={state.confirmPassword}
           onChangeText={(text) =>
-            setState((prevState) => ({ ...prevState, confirmPassword: text }))
+            setState((prev) => ({ ...prev, confirmPassword: text, confirmPasswordError: "" }))
           }
           secureTextEntry
         />
@@ -198,8 +237,16 @@ const SignUp: React.FC = () => {
         ) : null}
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={CreateAccount}>
-        <Text style={styles.buttonText}>Đăng ký</Text>
+      <TouchableOpacity 
+        style={[styles.button, state.loading && styles.buttonDisabled]} 
+        onPress={handleSignUp}
+        disabled={state.loading}
+      >
+        {state.loading ? (
+          <ActivityIndicator color={appColor.WHITE} />
+        ) : (
+          <Text style={styles.buttonText}>Đăng ký</Text>
+        )}
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.signInTextContainer}>
@@ -216,8 +263,6 @@ const SignUp: React.FC = () => {
     </View>
   );
 };
-
-export default SignUp;
 
 const styles = StyleSheet.create({
   container: {
@@ -261,6 +306,9 @@ const styles = StyleSheet.create({
     marginTop: 40,
     alignItems: "center",
   },
+  buttonDisabled: {
+    opacity: 0.7,
+  },
   buttonText: {
     fontFamily: "outfit-bold",
     color: appColor.WHITE,
@@ -279,5 +327,8 @@ const styles = StyleSheet.create({
     color: "red",
     fontSize: 14,
     marginTop: 5,
+    fontFamily: "outfit-regular",
   },
 });
+
+export default SignUp;

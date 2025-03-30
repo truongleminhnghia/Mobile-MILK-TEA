@@ -1,5 +1,8 @@
+import React from "react";
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { Provider } from "react-redux";
+import store from "../redux/store";
 
 export default function RootLayout() {
   useFonts({
@@ -10,13 +13,15 @@ export default function RootLayout() {
   });
 
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      {/* <Stack.Screen name="index" /> */}
-      <Stack.Screen name="(tabs)" />
-    </Stack>
+    <Provider store={store}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        {/* <Stack.Screen name="index" /> */}
+        <Stack.Screen name="(tabs)" />
+      </Stack>
+    </Provider>
   );
 }
